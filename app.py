@@ -70,8 +70,12 @@ style = """
 """
 st.markdown(style, unsafe_allow_html=True)
 animation1 = load_lottie(lottie_file)
-with st_lottie_spinner(animation1, loop=True, height=600):
-    time.sleep(20)
+# Create an empty placeholder
+with st.empty():
+    # Render the st_lottie_spinner component
+    spinner = st_lottie(animation1, loop=True, height=600)
+    time.sleep(15)
+    st.empty()
     
 # Display the logo in the sidebar
 st.sidebar.image("Vectors/logo.png", use_column_width=True)
