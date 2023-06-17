@@ -161,7 +161,7 @@ else:
             yaxis_title="Feature",     # Update axis titles
             font=dict(color="#ffc930", size=20),
             height=600,
-            width=400
+            width=1300
         )
         fig.update_xaxes(showgrid=True, gridcolor="white")
         fig.update_yaxes(showgrid=True, gridcolor="white")
