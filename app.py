@@ -156,9 +156,16 @@ else:
                 marker_color="#ffc930"
             )
         )
-        col_width = st.beta_columns([1])[0].width
-        if col_width:
-            fig.update_layout(width=col_width)
+        st.markdown(
+                """
+                <style>
+                .reportview-container .main .block-container {
+                    max-width: 100%;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
         fig.update_layout(
             xaxis_title="Feature",
             yaxis_title="Importance",
