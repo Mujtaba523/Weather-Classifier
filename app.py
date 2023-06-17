@@ -144,27 +144,26 @@ else:
         st.warning("Feature importances are not available for this model.")
         importances = None
 
+    # Check if importances is not None
     if importances is not None:
-        df_importances = pd.DataFrame(
-            {"Feature": scaled_input_data.columns, "Importance": importances}
-        )
+        df_importances = pd.DataFrame({"Feature": scaled_input_data.columns, "Importance": importances})
         df_importances = df_importances.sort_values("Importance", ascending=False)
-        fig = go.Figure(
-            go.Bar(
-                y=df_importances["Feature"],
-                x=df_importances["Importance"],
-                marker_color="#ffc930"
-            )
-        )
+        
+        # Create the vertical bar chart using Plotly
+        fig = go.Figure(go.Bar(
+            x=df_importances["Importance"],  # Swap x and y values
+            y=df_importances["Feature"],     # Swap x and y values
+            marker_color="#ffc930"
+        ))
         fig.update_layout(
-            yaxis_title="Feature",
-            xaxis_title="Importance",
+            xaxis_title="Importance",  # Update axis titles
+            yaxis_title="Feature",     # Update axis titles
             font=dict(color="#ffc930", size=20),
-            height=400,
-            width=500
+            height=600,
+            width=800  # Adjust the width as needed
         )
         fig.update_xaxes(showgrid=True, gridcolor="white")
         fig.update_yaxes(showgrid=True, gridcolor="white")
         
-        # Display the chart using st.plotly_chart()
+        # Display the chart
         st.plotly_chart(fig)
