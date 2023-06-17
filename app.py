@@ -61,7 +61,7 @@ st.sidebar.image("Vectors/logo.png", use_column_width=True)
 st.title("SkyInsight: AI-Powered Weather Forecasting System")
 st.markdown("SkyInsight is a powerful system designed to accurately classify weather conditions as Overcast, Clear, or Foggy. This classifier employs advanced techniques from machine learning, deep learning, and transfer learning domains to achieve precise weather predictions.")
 animation1 = load_lottie("Vectors/1.json")
-st_lottie(animation1, loop=True, width=1400, height=600)
+st_lottie(animation1, loop=True, width=None, height=600)
 selected_model = st.sidebar.selectbox("Select Model", list(models.keys()))
 
 # Classification
