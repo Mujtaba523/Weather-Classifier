@@ -156,9 +156,9 @@ else:
                 marker_color="#ffc930"
             )
         )
-        max_width = st.beta_get_max_width()
-        if max_width:
-            fig.update_layout(width=max_width)
+        col_width = st.beta_columns([1])[0].width
+        if col_width:
+            fig.update_layout(width=col_width)
         fig.update_layout(
             xaxis_title="Feature",
             yaxis_title="Importance",
