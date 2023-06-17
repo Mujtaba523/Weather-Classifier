@@ -5,7 +5,7 @@ import joblib
 import tensorflow as tf
 import numpy as np
 import json
-from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie, st_lottie_spinner
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import time
