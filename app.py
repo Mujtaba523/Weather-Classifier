@@ -161,23 +161,10 @@ else:
             yaxis_title="Importance",
             font=dict(color="#ffc930", size=20),
             height=600,
+            width=True
         )
         fig.update_xaxes(showgrid=True, gridcolor="white")
         fig.update_yaxes(showgrid=True, gridcolor="white")
-        # Adjust the CSS style to expand the chart
-        st.markdown(
-            """
-            <style>
-            .reportview-container .main .block-container{
-                max-width: 100%;
-                padding-right: 0rem;
-                padding-left: 0rem;
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
         
         # Display the chart using st.plotly_chart()
-        st.plotly_chart(fig)
         st.plotly_chart(fig)
