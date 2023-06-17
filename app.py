@@ -115,21 +115,21 @@ with col2:
         predictions = models[selected_model].predict(scaled_input_data)[0]
         probabilities = models[selected_model].predict_proba(scaled_input_data)
 
-with col1:
-    # Display the predicted weather summary and probabilities
-    st.subheader("Result")
-    if selected_model in ["Recurrent Neural Network", "Feed-Forward Neural Network"]:
-        predicted_class = np.argmax(predictions)
-        predicted_prob = predictions[predicted_class]
-        st.markdown(f"##### The classified weather summary is: {classes[predicted_class]}")
-        st.markdown(f"##### The classified probability is: {predicted_prob*100:.2f}%")
-    else:
-        max_prob_indices = np.argmax(probabilities, axis=1)
-        for i, max_prob_index in enumerate(max_prob_indices):
-            max_prob = probabilities[i, max_prob_index]
-            # Print the highest probability and its corresponding class label
-            st.write(f"##### The classified weather summary is: {classes[predictions]}")
-            st.write(f"##### The classified probability is: {max_prob*100:.2f}%")
+
+# Display the predicted weather summary and probabilities
+st.subheader("Result")
+if selected_model in ["Recurrent Neural Network", "Feed-Forward Neural Network"]:
+    predicted_class = np.argmax(predictions)
+    predicted_prob = predictions[predicted_class]
+    st.markdown(f"##### The classified weather summary is: {classes[predicted_class]}")
+    st.markdown(f"##### The classified probability is: {predicted_prob*100:.2f}%")
+else:
+    max_prob_indices = np.argmax(probabilities, axis=1)
+    for i, max_prob_index in enumerate(max_prob_indices):
+        max_prob = probabilities[i, max_prob_index]
+        # Print the highest probability and its corresponding class label
+        st.write(f"##### The classified weather summary is: {classes[predictions]}")
+        st.write(f"##### The classified probability is: {max_prob*100:.2f}%")
 
 st.write('---')
 st.subheader("Feature Importances")
