@@ -5,10 +5,9 @@ import joblib
 import tensorflow as tf
 import numpy as np
 import json
-from streamlit_lottie import st_lottie, st_lottie_spinner
+from streamlit_lottie import st_lottie
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import time
 
 import warnings
 warnings.simplefilter('ignore')
@@ -55,28 +54,7 @@ st.set_page_config(
     layout='wide',
 )
 
-models = load_models()
-# Splash Screen
-lottie_file = "Vectors/2.json"
-style = """
-    <style>
-    .splash-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    </style>
-"""
-st.markdown(style, unsafe_allow_html=True)
-animation1 = load_lottie(lottie_file)
-# Create an empty placeholder
-with st.empty():
-    # Render the st_lottie_spinner component
-    spinner = st_lottie(animation1, loop=True, height=600)
-    time.sleep(15)
-    st.empty()
-    
+models = load_models()    
 # Display the logo in the sidebar
 st.sidebar.image("Vectors/logo.png", use_column_width=True)
 # Create the sidebar and select model
