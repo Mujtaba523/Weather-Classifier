@@ -9,6 +9,16 @@ from streamlit_lottie import st_lottie
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier, BaggingClassifier
+
 import warnings
 warnings.simplefilter('ignore')
 
