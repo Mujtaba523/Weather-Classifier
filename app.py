@@ -151,14 +151,14 @@ else:
         df_importances = df_importances.sort_values("Importance", ascending=False)
         fig = go.Figure(
             go.Bar(
-                x=df_importances["Feature"],
-                y=df_importances["Importance"],
+                y=df_importances["Feature"],
+                x=df_importances["Importance"],
                 marker_color="#ffc930"
             )
         )
         fig.update_layout(
-            xaxis_title="Feature",
-            yaxis_title="Importance",
+            yaxis_title="Feature",
+            xaxis_title="Importance",
             font=dict(color="#ffc930", size=20),
             height=400,
             width=500
