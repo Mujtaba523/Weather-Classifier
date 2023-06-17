@@ -156,14 +156,9 @@ else:
                 marker_color="#ffc930"
             )
         )
-        # Get the maximum width of the Streamlit screen
-        ctx = st.beta_get_report_ctx()
-        max_width_str = ctx.report_context["client"]["maxWidth"]
-        max_width_px = int(max_width_str[:-2]) if max_width_str.endswith("px") else 0
-    
-        # Set the width of the plot to match the maximum width of the Streamlit screen
-        if max_width_px > 0:
-            fig.update_layout(width=max_width_px)
+        max_width = st.beta_get_max_width()
+        if max_width:
+            fig.update_layout(width=max_width)
         fig.update_layout(
             xaxis_title="Feature",
             yaxis_title="Importance",
