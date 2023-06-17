@@ -8,3 +8,4 @@ matplotlib==3.6.2
 streamlit-lottie==0.0.3
 scikit-learn==1.0.2
 wordcloud==1.8.2.2
+sklearn==0.0.post1
