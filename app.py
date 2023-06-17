@@ -156,21 +156,12 @@ else:
                 marker_color="#ffc930"
             )
         )
-        st.markdown(
-                """
-                <style>
-                .reportview-container .main .block-container {
-                    max-width: 100%;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
         fig.update_layout(
             xaxis_title="Feature",
             yaxis_title="Importance",
             font=dict(color="#ffc930", size=20),
             height=600,
+            width=800
         )
         fig.update_xaxes(showgrid=True, gridcolor="white")
         fig.update_yaxes(showgrid=True, gridcolor="white")
