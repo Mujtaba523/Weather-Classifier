@@ -8,16 +8,7 @@ import json
 from streamlit_lottie import st_lottie
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-
-from sklearn.linear_model import LogisticRegression, SGDClassifier
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier, GradientBoostingClassifier, BaggingClassifier
+import time
 
 import warnings
 warnings.simplefilter('ignore')
@@ -63,8 +54,25 @@ st.set_page_config(
     initial_sidebar_state="expanded",
     layout='wide',
 )
-models = load_models()
 
+models = load_models()
+# Splash Screen
+lottie_file = "Vectors/2.json"
+style = """
+    <style>
+    .splash-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    </style>
+"""
+st.markdown(style, unsafe_allow_html=True)
+animation1 = load_lottie(lottie_file)
+with st_lottie_spinner(animation1, loop=True, height=600):
+    time.sleep(20)
+    
 # Display the logo in the sidebar
 st.sidebar.image("Vectors/logo.png", use_column_width=True)
 # Create the sidebar and select model
