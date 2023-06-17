@@ -149,18 +149,19 @@ else:
         df_importances = pd.DataFrame({"Feature": scaled_input_data.columns, "Importance": importances})
         df_importances = df_importances.sort_values("Importance", ascending=False)
         
-        # Create the vertical bar chart using Plotly
+        # Create the horizontal bar chart using Plotly
         fig = go.Figure(go.Bar(
             x=df_importances["Importance"],  # Swap x and y values
             y=df_importances["Feature"],     # Swap x and y values
-            marker_color="#ffc930"
+            marker_color="#ffc930",
+            orientation='h'  # Set the orientation to horizontal
         ))
         fig.update_layout(
             xaxis_title="Importance",  # Update axis titles
             yaxis_title="Feature",     # Update axis titles
             font=dict(color="#ffc930", size=20),
             height=600,
-            width=800  # Adjust the width as needed
+            width=1400
         )
         fig.update_xaxes(showgrid=True, gridcolor="white")
         fig.update_yaxes(showgrid=True, gridcolor="white")
