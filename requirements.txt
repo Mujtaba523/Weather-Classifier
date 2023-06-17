@@ -1,0 +1,10 @@
+streamlit==1.21.0
+pandas==1.5.1
+joblib==1.2.0
+tensorflow==2.11.0
+numpy==1.23.4
+plotly==5.11.0
+matplotlib==3.6.2
+streamlit-lottie==0.0.3
+scikit-learn==1.0.2
+wordcloud==1.8.2.2
